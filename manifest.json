@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "BitlyShield",
+  "version": "1.0",
+  "permissions": ["webRequest","webRequestBlocking","http://*/","https://*/","http://bit.ly/"],
+  "background": {
+  	"scripts": ["bitly.js","warning.js"]
+  },
+  "web_accessible_resources": ["warning.html"]
+}
+
+

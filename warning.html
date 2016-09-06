@@ -1,12 +1,27 @@
 <html>
 	<head>
 		<title>Hello</title>
+		<style type="text/css">
+			#panel {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 20pt;
+			}
+		</style>
 	</head>
 	<body>
-		<center>
+		<center id="panel">
 			You are being redirect to:
 			<span id="url"></span>
+			<form id="go">
+				<button type="submit">
+					Go!
+				</button>
+			</form>
 		</center>
+		<script src="jquery.min.js"></script>
 		<script src="warning.js"></script>
 	</body>
 </html>

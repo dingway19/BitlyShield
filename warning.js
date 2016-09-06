@@ -6,7 +6,11 @@ xhr.onload = function(e) {
 }
 xhr.onreadystatechange = function() {
 	console.log(xhr);
-	document.getElementById("url").innerHTML = requestedUrl;
+	var redirectTo = xhr.getResponseHeader("X-Final-URL");
+	document.getElementById("url").innerHTML = "<a href='" + redirectTo + "'>" + redirectTo + "</a>";
+	document.getElementById("go").action = redirectTo;
+
 };
-xhr.open("GET", requestedUrl, true);
+xhr.open("GET", "https://cors-anywhere.herokuapp.com/" + requestedUrl, true);
+xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 xhr.send(null);
